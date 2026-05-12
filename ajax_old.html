@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ajax Load Local Data</h2>
+    <button onclick="loadText()">Load Text files</button>
+    <button onclick="loadJson()">Load Json file</button>
+
+    <pre id="ajaxData">Click to button to load data</pre>
+
+   <script>
+  function loadText() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "file.txt", true); // Ensure extension matches your file
+
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // Just display the raw text directly
+        document.getElementById("ajaxData").textContent = xhr.responseText;
+      } else {
+        document.getElementById("ajaxData").textContent = "Error loading text file.";
+      }
+    };
+
+    xhr.onerror = function() {
+      document.getElementById("ajaxData").textContent = "Request failed.";
+    };
+
+    xhr.send();
+  }
+
+  function loadJson() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "data.json", true);
+
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // Parse and format JSON for the <pre> tag
+        var data = JSON.parse(xhr.responseText);
+        document.getElementById("ajaxData").textContent = JSON.stringify(data, null, 4);
+      }
+    };
+    xhr.send();
+  }
+</script>
+
+
+</body>
+</html>

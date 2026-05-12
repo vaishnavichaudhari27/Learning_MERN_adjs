@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // old style
+        function welcome() { //function
+            document.write(`Its vaishnavi <br>`);//statement
+        }
+
+        welcome();
+        //using arrow function
+
+        const welcome2 = () =>{
+             document.write(`Its sagar <br>`);
+        }
+        welcome2();
+
+    </script>
+
+    <script>
+       // using function
+       let welcome3 = function(name){
+        return `hello its ${name}`;
+       }
+       document.write(welcome3("sagar") + "<br>");
+
+       //arrow function
+       let welcome4 = (name,age) => {
+        return `Hello its ${name}`;
+
+       }
+       
+       document.write(`Its vaishnavi <br>`);
+       document.write(welcome4("vaibhavi") + "<br>");
+       console.log(typeof welcome4);
+
+ let name="amol";
+ let mobile="12345";
+ const num = [1,2,3,4];
+ const obj ={
+    "name":"amol",
+    "age":20,
+    "address":"borkund"
+ }
+
+    </script>
+</body>
+
+</html>
+

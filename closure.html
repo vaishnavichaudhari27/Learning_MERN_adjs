@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        function outer(){
+            let x = 100;
+
+            function inner(){
+                document.write(x);
+
+            }
+            return inner;
+
+        }
+        let f = outer();
+        f();
+    </script> -->
+
+    <script>
+        function cart(){
+            let items = 0;
+
+            return function(){
+                items++;
+                console.log("items in cart :" , items)
+            }
+        }
+        let addItem = cart();
+        addItem();  //1
+        addItem();  //2
+        addItem();  //3
+    </script>
+</body>
+</html>

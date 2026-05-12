@@ -17,11 +17,33 @@
 
         //let example
         let lname = "chaudhari";
-
-
-        console.log(lname);
+       // let lname ="deore"; //redecalre not allow
+       lname = "mali";//reassign allow //
+       
+       
+       console.log(lname);
         document.write(lname);
         alert(lname);
+
+        //const example
+        const cname = "FCT";
+        // const cname = "TCS";//redeclare not allow
+        // cname = "wipro";//reassign not allow
+
+        document.write(cname);
+
+        // scope example
+
+        if(10==10){
+            var y = "hello";
+            let x = "how are you?"
+            console.log(x); // block scope or functional scope
+        }
+        console.log(y); //global scope
+
+
+        
+
     </script>
 </body>
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Promise All</title>
+</head>
+<body>
+    <script>
+        let p1 = new Promise((resolve) => {
+            setTimeout(() => resolve("Apple is ready"), 1000);
+        });
+        let p2 = new Promise((resolve) => {
+            setTimeout(() => resolve, reject ("Banana is missing! (out of stock)"), 2000);
+        });
+        let p3 = new Promise((resolve) => {
+            setTimeout(() => resolve("Grapes are ready"), 3000);
+        });
+
+        Promise.all([p1, p2, p3])
+            .then(results => {
+                document.write("<h3>All fruits are Ready</h3>");
+                results.forEach(item => {
+                    document.write(item + "<br>");
+                });
+            })
+            .catch(error => {
+                document.write("<h3>One or more product missing</h3>");
+                document.write(error);
+            }) // Removed the semicolon from here
+            .finally(() => {
+                document.write("<br><strong>Fruit Packing Completed</strong>"); // Changed to lowercase 'd'
+            });
+    </script>
+</body>
+</html>
